@@ -1,0 +1,82 @@
+2023-04-05 10:17:49,601 [trainer.py] => Time Str >>> 0405-10-17-49-570
+2023-04-05 10:17:49,608 [trainer.py] => memory_per_class: 20
+2023-04-05 10:17:49,608 [trainer.py] => fixed_memory: False
+2023-04-05 10:17:49,611 [trainer.py] => shuffle: True
+2023-04-05 10:17:49,611 [trainer.py] => model_name: memo
+2023-04-05 10:17:49,611 [trainer.py] => seed: 1993
+2023-04-05 10:17:49,611 [trainer.py] => dataset: cifar100
+2023-04-05 10:17:49,615 [trainer.py] => memory_size: 4771
+2023-04-05 10:17:49,615 [trainer.py] => init_cls: 5
+2023-04-05 10:17:49,615 [trainer.py] => increment: 5
+2023-04-05 10:17:49,615 [trainer.py] => convnet_type: memo_resnet32
+2023-04-05 10:17:49,618 [trainer.py] => prefix: fair
+2023-04-05 10:17:49,618 [trainer.py] => device: [device(type='cuda', index=1)]
+2023-04-05 10:17:49,618 [trainer.py] => debug: False
+2023-04-05 10:17:49,618 [trainer.py] => skip: False
+2023-04-05 10:17:49,618 [trainer.py] => train_base: True
+2023-04-05 10:17:49,621 [trainer.py] => train_adaptive: False
+2023-04-05 10:17:49,621 [trainer.py] => scheduler: cosine
+2023-04-05 10:17:49,623 [trainer.py] => init_epoch: 200
+2023-04-05 10:17:49,623 [trainer.py] => t_max: 170
+2023-04-05 10:17:49,623 [trainer.py] => init_lr: 0.1
+2023-04-05 10:17:49,624 [trainer.py] => init_milestones: [60, 120, 170]
+2023-04-05 10:17:49,624 [trainer.py] => init_lr_decay: 0.1
+2023-04-05 10:17:49,624 [trainer.py] => init_weight_decay: 0.0005
+2023-04-05 10:17:49,625 [trainer.py] => epochs: 170
+2023-04-05 10:17:49,625 [trainer.py] => lrate: 0.1
+2023-04-05 10:17:49,625 [trainer.py] => milestones: [80, 120, 150]
+2023-04-05 10:17:49,625 [trainer.py] => lrate_decay: 0.1
+2023-04-05 10:17:49,625 [trainer.py] => batch_size: 128
+2023-04-05 10:17:49,627 [trainer.py] => weight_decay: 0.0002
+2023-04-05 10:17:49,627 [trainer.py] => alpha_aux: 1.0
+2023-04-05 10:17:49,627 [trainer.py] => config: ./exps/memo.json
+2023-04-05 10:17:49,627 [trainer.py] => time_str: 0405-10-17-49-570
+2023-04-05 10:17:49,629 [trainer.py] => exp_name: 0405-10-17-49-570_cifar100_memo_resnet32_1993_B0_Inc5
+2023-04-05 10:17:49,629 [trainer.py] => logfilename: logs/fair/cifar100/memo/0405-10-17-49-570_cifar100_memo_resnet32_1993_B0_Inc5
+2023-04-05 10:17:49,629 [trainer.py] => csv_name: cifar100_1993_memo_resnet32_B0_Inc5
+2023-04-05 10:17:51,677 [data_manager.py] => [68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+2023-04-05 10:17:51,934 [memo.py] => >>> train generalized blocks:True train_adaptive:False
+2023-04-05 10:17:51,934 [trainer.py] => Start time:1680664671.9349651
+2023-04-05 10:17:51,936 [trainer.py] => All params: 112016
+2023-04-05 10:17:51,936 [trainer.py] => Trainable params: 112016
+2023-04-05 10:17:51,954 [inc_net.py] => SpecializedResNet_cifar(
+  (final_stage): Sequential(
+    (0): ResNetBasicblock(
+      (conv_a): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): DownsampleA(
+        (avg): AvgPool2d(kernel_size=1, stride=2, padding=0)
+      )
+    )
+    (1): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (2): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (3): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (4): ResNetBasicblock(
+      (conv_a): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_a): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv_b): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn_b): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AvgPool2d(kernel_size=8, stride=8, padding=0)
+)
+2023-04-05 10:17:51,957 [memo.py] => Learning on 0-5
+2023-04-05 10:17:51,962 [memo.py] => All params: 464219
+2023-04-05 10:17:51,963 [memo.py] => Trainable params: 464219

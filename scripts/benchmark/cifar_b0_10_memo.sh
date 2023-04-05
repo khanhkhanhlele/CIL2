@@ -2,7 +2,7 @@ python main_memo.py \
     -model memo \
     -init 10 \
     -incre 10 \
-    -net memo_resnet32 \
+    -net memo_resnet18 \
     -p benchmark \
     -d 0 \
     --scheduler cosine \

@@ -1,5 +1,5 @@
 python main_memo.py \
-    -model memo \
+    -model_name memo \
     -init 10 \
     -incre 10 \
     -net memo_resnet18 \

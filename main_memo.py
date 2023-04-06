@@ -39,7 +39,7 @@ def setup_parser():
 
     # init
     parser.add_argument('--scheduler', type=str, default='steplr', choices=['steplr','cosine'])
-    parser.add_argument('--init_epoch', type=int, default=20)
+    parser.add_argument('--init_epoch', type=int, default=200)
     parser.add_argument('--t_max', type=int, default=None)
     parser.add_argument('--init_lr', type=float, default=0.1)
     parser.add_argument('--init_milestones', type=list, default=[60,120,170])

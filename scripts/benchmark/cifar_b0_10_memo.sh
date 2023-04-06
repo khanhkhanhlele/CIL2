@@ -9,4 +9,3 @@ python main_memo.py \
     --t_max 170 \
     --train_base \
     --memory_size 500 \ 
-    --epochs 5

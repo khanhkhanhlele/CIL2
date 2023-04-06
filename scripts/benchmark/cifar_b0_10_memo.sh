@@ -9,6 +9,8 @@ python main_memo.py \
     --t_max 170 \
     --train_base \
     --memory_size 500 \
-    --init_epoch 20 \
-    --epochs 10
+    --init_epoch 250 \
+    --epochs 250\
+    --init_weight_decay 0\
+    --weight_decay 0
     

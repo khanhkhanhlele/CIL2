@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 from models.base import BaseLearner
 from utils.inc_net import AdaptiveNet
 from utils.toolkit import count_parameters, target2onehot, tensor2numpy
-
+import csv
 num_workers=8
 T=2
 
@@ -151,7 +151,7 @@ class MEMO(BaseLearner):
             optimizer = optim.SGD(
                 filter(lambda p: p.requires_grad, self._network.parameters()), 
                 lr=self.args['lrate'], 
-                momentum=0.9, 
+                #momentum=0.9, 
                 weight_decay=self.args['weight_decay']
             )
             if self.args['scheduler'] == 'steplr':
@@ -173,6 +173,7 @@ class MEMO(BaseLearner):
                 self._network.module.weight_align(self._total_classes-self._known_classes)
             else:
                 self._network.weight_align(self._total_classes-self._known_classes)
+            
 
             
     def _init_train(self,train_loader,test_loader,optimizer,scheduler):
@@ -246,5 +247,5 @@ class MEMO(BaseLearner):
             else:
                 info = 'Task {}, Epoch {}/{} => Loss {:.3f}, Loss_clf {:.3f}, Loss_aux {:.3f}, Train_accy {:.2f}'.format(
                 self._cur_task, epoch+1, self.args["epochs"], losses/len(train_loader), losses_clf/len(train_loader),losses_aux/len(train_loader),train_acc)
-            prog_bar.set_description(info)
+            prog_bar.set_description(info)            
         logging.info(info)

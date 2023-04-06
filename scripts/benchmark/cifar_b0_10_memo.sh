@@ -7,4 +7,5 @@ python main_memo.py \
     -d 0 \
     --scheduler cosine \
     --t_max 170 \
-    --train_base
+    --train_base \
+    --memory_size 500

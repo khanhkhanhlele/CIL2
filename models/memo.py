@@ -116,9 +116,9 @@ class MEMO(BaseLearner):
         if self._cur_task==0:
             optimizer = optim.SGD(
                 filter(lambda p: p.requires_grad, self._network.parameters()),
-                momentum=0.9,
+                #momentum=0.9,
                 lr=self.args["init_lr"],
-                weight_decay=self.args["init_weight_decay"]
+                #weight_decay=self.args["init_weight_decay"]
             )
             if self.args['scheduler'] == 'steplr':
                 scheduler = optim.lr_scheduler.MultiStepLR(

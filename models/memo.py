@@ -208,7 +208,7 @@ class MEMO(BaseLearner):
             logging.info(info)
 
     def _update_representation(self, train_loader, test_loader, optimizer, scheduler):
-        prog_bar = tqdm(range(self.args["epochs"]))####################################
+        prog_bar = tqdm(range(self.args["epochs"]))
         for _, epoch in enumerate(prog_bar):
             self.set_network()
             losses = 0.

@@ -8,7 +8,7 @@ python main_memo.py \
     --scheduler cosine \
     --t_max 170 \
     --train_base \
-    --memory_size 500 \
+    --memory_size 2000 \
     --init_epoch 250 \
     --epochs 250\
     --init_weight_decay 0\

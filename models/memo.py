@@ -146,7 +146,7 @@ class MEMO(BaseLearner):
                     self._network = nn.DataParallel(self._network, self._multiple_gpus)
                 
                 cur_test_acc = self._compute_accuracy(self._network, self.test_loader)
-                logging.info(f"Loaded_Test_Acc:{load_acc} Cur_Test_Acc:{cur_test_acc}")
+                logging.info(f"Loaded_Test_Acc:{load_acc} Cur_Test_Acc:{cur_test_acc} {self._network}")######
         else:
             optimizer = optim.SGD(
                 filter(lambda p: p.requires_grad, self._network.parameters()), 

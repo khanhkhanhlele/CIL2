@@ -3,6 +3,7 @@ python main_memo.py \
     -init 10 \
     -incre 10 \
     -net memo_resnet18 \
+    --convnet_type memo_resnet18\
     -p benchmark \
     -d 0 \
     --scheduler cosine \

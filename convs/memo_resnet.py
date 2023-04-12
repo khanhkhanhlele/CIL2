@@ -2,6 +2,7 @@
 Reference:
 https://github.com/pytorch/vision/blob/master/torchvision/models/resnet.py
 '''
+import torch.nn.functional as F
 import torch
 import torch.nn as nn
 try:
@@ -143,7 +144,7 @@ class GeneralizedResNet_imagenet(nn.Module):
                              "or a 3-element tuple, got {}".format(replace_stride_with_dilation))
         self.groups = groups
         self.base_width = width_per_group
-        self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=7, stride=2, padding=3,  # stride=2 -> stride=1 for cifar
+        self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=3, stride=1, padding=1,  # stride=2 -> stride=1 for cifar
                                bias=False)
         self.bn1 = norm_layer(self.inplanes)
         self.relu = nn.ReLU(inplace=True)
@@ -197,7 +198,7 @@ class GeneralizedResNet_imagenet(nn.Module):
         x = self.conv1(x)  
         x = self.bn1(x)
         x = self.relu(x)
-        x = self.maxpool(x)
+        #x = self.maxpool(x)
         x_1 = self.layer1(x)  
         x_2 = self.layer2(x_1)  
         x_3 = self.layer3(x_2)  
@@ -262,7 +263,8 @@ class SpecializedResNet_imagenet(nn.Module):
     
     def forward(self,x):
         x_4 = self.layer4(x)  # [bs, 512, 4, 4]
-        pooled = self.avgpool(x_4)  # [bs, 512, 1, 1]
+        pooled = F.avg_pool2d(x_4, x_4.shape[2])  # [bs, 512, 1, 1]
+        #pooled = self.avgpool(x_4)  # [bs, 512, 1, 1]
         features = torch.flatten(pooled, 1)  # [bs, 512]
         return features
 

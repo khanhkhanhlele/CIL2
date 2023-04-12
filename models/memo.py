@@ -146,7 +146,7 @@ class MEMO(BaseLearner):
                     self._network = nn.DataParallel(self._network, self._multiple_gpus)
                 
                 cur_test_acc = self._compute_accuracy(self._network, self.test_loader)
-                logging.info(f"Loaded_Test_Acc:{load_acc} Cur_Test_Acc:{cur_test_acc} {self._network}")######
+                logging.info(f"Loaded_Test_Acc:{load_acc} Cur_Test_Acc:{cur_test_acc} ")
         else:
             optimizer = optim.SGD(
                 filter(lambda p: p.requires_grad, self._network.parameters()), 
@@ -245,7 +245,7 @@ class MEMO(BaseLearner):
                 info = 'Task {}, Epoch {}/{} => Loss {:.3f}, Loss_clf {:.3f}, Loss_aux  {:.3f}, Train_accy {:.2f}, Test_accy {:.2f}'.format(
                 self._cur_task, epoch+1, self.args["epochs"], losses/len(train_loader),losses_clf/len(train_loader),losses_aux/len(train_loader),train_acc, test_acc)
             else:
-                info = 'Task {}, Epoch {}/{} => Loss {:.3f}, Loss_clf {:.3f}, Loss_aux {:.3f}, Train_accy {:.2f}'.format(
+                info = 'Task {}, Epoch {}/{} => Loss {:.3f}, Loss_clf {:.3f}, Loss_aux {:.3f}, Train_accy {:.2f}, {self._network}'.format(
                 self._cur_task, epoch+1, self.args["epochs"], losses/len(train_loader), losses_clf/len(train_loader),losses_aux/len(train_loader),train_acc)
             prog_bar.set_description(info)            
         logging.info(info)

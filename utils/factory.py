@@ -46,6 +46,6 @@ def get_model(model_name, args):
     elif name == 'memo':
         return MEMO(args)
     elif name == 'der_cf10':
-        return MEMO(args)
+        return DER(args)
     else:
         assert 0

@@ -45,7 +45,7 @@ def get_model(model_name, args):
         return RMM_FOSTER(args)
     elif name == 'memo':
         return MEMO(args)
-    elif name == 'der_cf10':
+    elif name == 'der_cf10' or name == 'der_cf100_10' or name == 'der_cf100_20':
         return DER(args)
     else:
         assert 0

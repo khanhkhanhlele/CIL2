@@ -23,6 +23,7 @@ def train(args):
 def _train(args):
     time_str = datetime.datetime.now().strftime('%m%d-%H-%M-%S-%f')[:-3]
     args['time_str'] = time_str
+    print("22222222222222")
     
     init_cls = 0 if args ["init_cls"] == args["increment"] else args["init_cls"]
     exp_name = "{}_{}_{}_{}_B{}_Inc{}".format(
@@ -96,6 +97,7 @@ def _train(args):
     
     for task in range(data_manager.nb_tasks):
         logging.info("All params: {}".format(count_parameters(model._network)))
+        print("22222222222222")
         logging.info(
             "Trainable params: {}".format(count_parameters(model._network, True))
         )

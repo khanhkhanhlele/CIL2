@@ -9,7 +9,7 @@ def main():
     param = load_json(args.config)
     args = vars(args)  # Converting argparse Namespace to a dict.
     param.update(args)
-    print(args)
+    print(param)
     train(param)
 
 

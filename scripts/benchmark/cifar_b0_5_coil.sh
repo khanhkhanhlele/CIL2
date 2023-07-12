@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=1 python main.py \
+python main.py \
     -model coil \
     -init 5 \
     -incre 5 \

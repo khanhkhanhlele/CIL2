@@ -145,11 +145,12 @@ class BaseLearner(object):
             inputs = inputs.to(self._device)
             with torch.no_grad():
                 outputs = self._network(inputs)["logits"]
-            predicts = torch.topk(
-                outputs, k=self.topk, dim=1, largest=True, sorted=True
-            )[
-                1
-            ]  # [bs, topk]
+            # predicts = torch.topk(
+            #     outputs, k=self.topk, dim=1, largest=True, sorted=True
+            # )[
+            #     1
+            # ]  # [bs, topk]
+            predicts = 0
             y_pred.append(predicts.cpu().numpy())
             y_true.append(targets.cpu().numpy())
 

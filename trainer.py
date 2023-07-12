@@ -23,7 +23,6 @@ def train(args):
 def _train(args):
     time_str = datetime.datetime.now().strftime('%m%d-%H-%M-%S-%f')[:-3]
     args['time_str'] = time_str
-    print("22222222222222")
     
     init_cls = 0 if args ["init_cls"] == args["increment"] else args["init_cls"]
     exp_name = "{}_{}_{}_{}_B{}_Inc{}".format(
@@ -97,8 +96,11 @@ def _train(args):
     
     for task in range(data_manager.nb_tasks):
         logging.info("All params: {}".format(count_parameters(model._network)))
-        print("22222222222222")
         logging.info(
+            "Trainable params: {}".format(count_parameters(model._network, True))
+        )
+        print("All params: {}".format(count_parameters(model._network)))
+        print(
             "Trainable params: {}".format(count_parameters(model._network, True))
         )
         
@@ -124,6 +126,7 @@ def _train(args):
             logging.info("CNN top5 curve: {}".format(cnn_curve["top5"]))
             logging.info("NME top1 curve: {}".format(nme_curve["top1"]))
             logging.info("NME top5 curve: {}\n".format(nme_curve["top5"]))
+            print("CNN top1 curve: {}".format(cnn_curve["top1"]))
         else:
             logging.info("No NME accuracy.")
             logging.info("CNN: {}".format(cnn_accy["grouped"]))
@@ -133,7 +136,7 @@ def _train(args):
 
             logging.info("CNN top1 curve: {}".format(cnn_curve["top1"]))
             logging.info("CNN top5 curve: {}\n".format(cnn_curve["top5"]))
-    
+            print("CNN top1 curve: {}".format(cnn_curve["top1"]))
     end_time = time.time()
     logging.info(f"End Time:{end_time}")
     cost_time = end_time - start_time

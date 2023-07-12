@@ -150,7 +150,7 @@ class BaseLearner(object):
             # )[
             #     1
             # ]  # [bs, topk]
-            predicts = 0
+            predicts = torch.tensor([0])
             y_pred.append(predicts.cpu().numpy())
             y_true.append(targets.cpu().numpy())
 

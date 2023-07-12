@@ -12,14 +12,14 @@ from utils.toolkit import count_parameters, target2onehot, tensor2numpy
 
 EPSILON = 1e-8
 
-init_epoch = 2 #200
+init_epoch = 1 #200
 init_lr = 0.1
 init_milestones = [60, 120, 170]
 init_lr_decay = 0.1
 init_weight_decay = 0.0005
 
 
-epochs = 2 #170
+epochs = 1 #170
 lrate = 0.1
 milestones = [80, 120, 150]
 lrate_decay = 0.1

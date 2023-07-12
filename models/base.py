@@ -146,7 +146,7 @@ class BaseLearner(object):
             with torch.no_grad():
                 outputs = self._network(inputs)["logits"]
             predicts = torch.topk(
-                outputs, k=1, dim=1, largest=True, sorted=True
+                outputs, k=self.topk, dim=1, largest=True, sorted=True
             )[
                 1
             ]  # [bs, topk]

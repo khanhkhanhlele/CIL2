@@ -1,0 +1,1 @@
+python main.py -model der_cf10 --dataset cifar10 -d 0 -init 2 -incre 2 -p benchmark --convnet_type resnet18 -ms 200

@@ -89,7 +89,7 @@ def _train(args):
         args["increment"],
     )
     model = factory.get_model(args["model_name"], args)
-
+    print(args["model_name"])
     cnn_curve, nme_curve, no_nme = {"top1": [], "top5": []}, {"top1": [], "top5": []}, True
     start_time = time.time()
     logging.info(f"Start time:{start_time}")
